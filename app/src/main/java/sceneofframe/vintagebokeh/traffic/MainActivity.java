@@ -32,10 +32,49 @@ public class MainActivity extends AppCompatActivity {
         //Button Controller
         buttonController();
 
+        //Create ListView
+        CreateListView();
+
     } // Main Method
 
-    private void buttonController() {
+    private void CreateListView() {
 
+        //สร้างตัว ListView
+        // SetUp Data Source of Images
+        int[] intDrawable = new int[20];
+        intDrawable[0] = R.drawable.traffic_01;
+        intDrawable[1] = R.drawable.traffic_02;
+        intDrawable[2] = R.drawable.traffic_03;
+        intDrawable[3] = R.drawable.traffic_04;
+        intDrawable[4] = R.drawable.traffic_05;
+        intDrawable[5] = R.drawable.traffic_06;
+        intDrawable[6] = R.drawable.traffic_07;
+        intDrawable[7] = R.drawable.traffic_08;
+        intDrawable[8] = R.drawable.traffic_09;
+        intDrawable[9] = R.drawable.traffic_10;
+        intDrawable[10] = R.drawable.traffic_11;
+        intDrawable[11] = R.drawable.traffic_12;
+        intDrawable[12] = R.drawable.traffic_13;
+        intDrawable[13] = R.drawable.traffic_14;
+        intDrawable[14] = R.drawable.traffic_15;
+        intDrawable[15] = R.drawable.traffic_16;
+        intDrawable[16] = R.drawable.traffic_17;
+        intDrawable[17] = R.drawable.traffic_18;
+        intDrawable[18] = R.drawable.traffic_19;
+        intDrawable[19] = R.drawable.traffic_20;
+
+        // Setup Data Source Of Title
+        String[] strTitle = {"ห้ามเลี้ยวซ้าย", "ห้ามเลี้ยวขวา", "ตรงไป", "เลี้ยวขวา", "เลี้ยวซ้าย", "ทางออก", "ทางเข้า", "ทางออก", "หยุด", "สูงไม่เกิน 2.5 เมตร", "ห้ามเลี้ยวซ้าย", "ห้ามเลี้ยวขวา", "ตรงไป", "เลี้ยวขวา", "เลี้ยวซ้าย", "ทางออก", "ทางเข้า", "ทางออก", "หยุด", "สูงไม่เกิน 2.5 เมตร"};
+
+        // Drive Adapter
+        MyAdapter objMyAdapter = new MyAdapter(MainActivity.this, strTitle, intDrawable);
+        trafficListView.setAdapter(objMyAdapter);
+
+
+    } //Create ListView
+
+
+    private void buttonController() {
         aboutMeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
